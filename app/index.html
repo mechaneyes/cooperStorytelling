@@ -3,15 +3,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Smartphone Remote Control for Presentations | Tutorialzine Demo</title>
-
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>neoneon is Storytelling</title>
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
 	<!-- Place favicon.ico in the root directory -->
-
 	<link rel="stylesheet" href="//use.typekit.net/teb3zki.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/black.css" />
@@ -31,7 +27,7 @@
 	<!-- ————————————————————————————————————o————————————————————————————————————o FULL WIDTH -->
 	<!-- ————————————————————————————————————o FULL WIDTH -->
 	<div class="reveal">
-		<div class="slides">
+		<div class="dsSlides slides">
 
 
 			<!-- ————————————————————————————————————o Title Slide -->
@@ -40,23 +36,76 @@
 
 
 			<!-- ————————————————————————————————————o Andrey + Ray -->
-			<section>
-				<section class="who" data-background="images/3.jpg">Andrey + Ray</section>
-				<section class="rayPhotoIntro">
+			<section class="dsWho">
+				<section class="dsTxtHeadSub" data-background="images/3.jpg">
+					<h2>Andrey + Ray</h2>
+					<p>This is a vertical slider with one slide for each of our <br /> backgrounds/interests + 1 slide
+						to touch on Sound Noir</p>
+				</section>
+
+				<!-- ————————————————————————————————————o Ray Photos -->
+				<section class="dsRayPhotos dsTriptych">
 					<img src="http://verystill.com/images/blueBuildingDisco.jpg" />
+					<img src="http://verystill.com/images/forestForTrees.jpg" alt="">
 					<img src="http://verystill.com/images/thomasStreet33.jpg" alt="">
 				</section>
+				<!-- <section data-background="http://soundnoir.net/wp-content/uploads/summerAngles500pxWide.jpg"></section> -->
+
+				<!-- ————————————————————————————————————o Andrey Deets -->
+				<section class="dsAbsTrip dsTriptych">
+					<div class="dsEmote">🚀</div>
+					<div class="dsEmote">🐸</div>
+					<div class="dsEmote">🚀</div>
+				</section>
+
+				<!-- ————————————————————————————————————o SN -->
+				<section class="dsAbsTrip dsTriptych">
+					<img src="http://soundnoir.net/wp-content/uploads/summerAngles500pxWide.jpg" />
+					<img src="http://farm7.static.flickr.com/6225/6334119180_ddb5ba27bd_b.jpg" alt="">
+					<img src="http://farm7.static.flickr.com/6160/6136053644_7fe494808e_b.jpg" alt="">
+				</section>
 			</section>
-			
-			
+
+
+			<section class="dsStratMersi">
+				<section class="dsTxtOnly" data-background="images/4.jpg">
+					<h2>Strategizing w/ Mersiha</h2>
+				</section>
+				<section class="dsTxtOnly">
+					<h3>The in between spaces <br />
+						Blending abstraction and documentary <br />
+						Moving away from binary experiences <br />
+						Moving from compartmentalized experiences</h3>
+				</section>
+				<section class="dsTxtOnly">
+					<h3>Performance <br />
+						A live entity <br />
+						In the moment <br />
+						What the space asks of the performance <br />
+						we must listen to</h3>
+				</section>
+				<section class="dsTxtOnly">
+					<h3>Pop culture <br />
+						Spectacle <br />
+						Not obstructing <br />
+						But exploding</h3>
+				</section>
+			</section>
+
+
 			<section>
 				<!-- ————————————————————————————————————o Scene 01 Video -->
-				<section data-background-video="images/sub02_export01.mp4">
-				</section>
-				<section data-background="images/3.jpg">Vertical Slide 2</section>
+				<section data-background="images/3.jpg">👇👇👇 Mostar Videos 👇👇👇</section>
+
+				<section data-background-video="images/sub02_export01.mp4"></section>
+
 				<section data-background="images/4.jpg">Vertical Slide 3</section>
 			</section>
+
+
 			<section data-background="images/5.jpg">Single Horizontal Slide 2</section>
+
+
 			<section>
 				<section data-background="images/6.jpg">Vertical Slide 4</section>
 				<section data-background="images/7.jpg">Vertical Slide 5</section>
@@ -89,22 +138,35 @@
 
 	</script>
 
+
+
 	<!-- build:js scripts/vendor.js -->
-
-
-
-
 	<script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script> -->
 	<!-- <script src="/socket.io/socket.io.js"></script> -->
-
-
-
-
 	<!-- endbuild -->
+
+
+	<!-- <script src="scripts/script.js"></script> -->
+
+
+	<script>
+		revelInit = () => {
+			Reveal.initialize({
+				history: true, // Every slide will change the URL
+				width: '100%',
+				height: '100%'
+			})
+		}
+
+	</script>
+
+	<script onload="revelInit()" src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
+
+
+
 	<!-- build:js scripts/main.js -->
-	<script src="scripts/script.js"></script>
-	<script src="scripts/main.js"></script>
+	<!-- <script src="scripts/main.js"></script> -->
 	<!-- endbuild -->
 </body>
 

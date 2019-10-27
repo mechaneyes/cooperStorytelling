@@ -1,114 +1,115 @@
-$(function() {
+// $(function() {
 
-	// Initialize the Reveal.js library with the default config options
-	// See more here https://github.com/hakimel/reveal.js#configuration
+// 	// Initialize the Reveal.js library with the default config options
+// 	// See more here https://github.com/hakimel/reveal.js#configuration
 
-	Reveal.initialize({
-		history: true		// Every slide will change the URL
-	});
+// 	Reveal.initialize({
+// 		history: true,		// Every slide will change the URL
+// 		width: 100%;
+// 	});
 
-	// Connect to the socket
+// 	// // Connect to the socket
 
-	var socket = io();
+// 	// var socket = io();
 
-	// Variable initialization
+// 	// // Variable initialization
 
-	var form = $('form.login');
-	var secretTextBox = form.find('input[type=text]');
-	var presentation = $('.reveal');
+// 	// var form = $('form.login');
+// 	// var secretTextBox = form.find('input[type=text]');
+// 	// var presentation = $('.reveal');
 
-	var key = "", animationTimeout;
+// 	// var key = "", animationTimeout;
 
-	// When the page is loaded it asks you for a key and sends it to the server
+// 	// // When the page is loaded it asks you for a key and sends it to the server
 
-	form.submit(function(e){
+// 	// form.submit(function(e){
 
-		e.preventDefault();
+// 	// 	e.preventDefault();
 
-		key = secretTextBox.val().trim();
+// 	// 	key = secretTextBox.val().trim();
 
-		// If there is a key, send it to the server-side
-		// through the socket.io channel with a 'load' event.
+// 	// 	// If there is a key, send it to the server-side
+// 	// 	// through the socket.io channel with a 'load' event.
 
-		if(key.length) {
-			socket.emit('load', {
-				key: key
-			});
-		}
+// 	// 	if(key.length) {
+// 	// 		socket.emit('load', {
+// 	// 			key: key
+// 	// 		});
+// 	// 	}
 
-	});
+// 	// });
 
-	// The server will either grant or deny access, depending on the secret key
+// 	// // The server will either grant or deny access, depending on the secret key
 
-	socket.on('access', function(data){
+// 	// socket.on('access', function(data){
 
-		// Check if we have "granted" access.
-		// If we do, we can continue with the presentation.
+// 	// 	// Check if we have "granted" access.
+// 	// 	// If we do, we can continue with the presentation.
 
-		if(data.access === "granted") {
+// 	// 	if(data.access === "granted") {
 
-			// Unblur everything
-			presentation.removeClass('blurred');
+// 	// 		// Unblur everything
+// 	// 		presentation.removeClass('blurred');
 
-			form.hide();
+// 	// 		form.hide();
 
-			var ignore = false;
+// 	// 		var ignore = false;
 
-			$(window).on('hashchange', function(){
+// 	// 		$(window).on('hashchange', function(){
 
-				// Notify other clients that we have navigated to a new slide
-				// by sending the "slide-changed" message to socket.io
+// 	// 			// Notify other clients that we have navigated to a new slide
+// 	// 			// by sending the "slide-changed" message to socket.io
 
-				if(ignore){
-					// You will learn more about "ignore" in a bit
-					return;
-				}
+// 	// 			if(ignore){
+// 	// 				// You will learn more about "ignore" in a bit
+// 	// 				return;
+// 	// 			}
 
-				var hash = window.location.hash;
+// 	// 			var hash = window.location.hash;
 
-				socket.emit('slide-changed', {
-					hash: hash,
-					key: key
-				});
-			});
+// 	// 			socket.emit('slide-changed', {
+// 	// 				hash: hash,
+// 	// 				key: key
+// 	// 			});
+// 	// 		});
 
-			socket.on('navigate', function(data){
+// 	// 		socket.on('navigate', function(data){
 	
-				// Another device has changed its slide. Change it in this browser, too:
+// 	// 			// Another device has changed its slide. Change it in this browser, too:
 
-				window.location.hash = data.hash;
+// 	// 			window.location.hash = data.hash;
 
-				// The "ignore" variable stops the hash change from
-				// triggering our hashchange handler above and sending
-				// us into a never-ending cycle.
+// 	// 			// The "ignore" variable stops the hash change from
+// 	// 			// triggering our hashchange handler above and sending
+// 	// 			// us into a never-ending cycle.
 
-				ignore = true;
+// 	// 			ignore = true;
 
-				setInterval(function () {
-					ignore = false;
-				},100);
+// 	// 			setInterval(function () {
+// 	// 				ignore = false;
+// 	// 			},100);
 
-			});
+// 	// 		});
 
-		}
-		else {
+// 	// 	}
+// 	// 	else {
 
-			// Wrong secret key
+// 	// 		// Wrong secret key
 
-			clearTimeout(animationTimeout);
+// 	// 		clearTimeout(animationTimeout);
 
-			// Addding the "animation" class triggers the CSS keyframe
-			// animation that shakes the text input.
+// 	// 		// Addding the "animation" class triggers the CSS keyframe
+// 	// 		// animation that shakes the text input.
 
-			secretTextBox.addClass('denied animation');
+// 	// 		secretTextBox.addClass('denied animation');
 			
-			animationTimeout = setTimeout(function(){
-				secretTextBox.removeClass('animation');
-			}, 1000);
+// 	// 		animationTimeout = setTimeout(function(){
+// 	// 			secretTextBox.removeClass('animation');
+// 	// 		}, 1000);
 
-			form.show();
-		}
+// 	// 		form.show();
+// 	// 	}
 
-	});
+// 	// });
 
-});
+// });

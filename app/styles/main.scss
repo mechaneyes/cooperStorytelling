@@ -16,19 +16,82 @@ Helvetica,
 Arial,
 sans-serif;
 
+@mixin fontNova() {
+	font-family: regulator-nova, sans-serif;
+	font-style: normal;
+	font-weight: 100;
+	text-transform: none;
+}
 
 @import 'breakpoints';
 
 
-// FULL WIDTH SPECIFICITY
-// 
-.pt_primary #main .primary-content  {
-
+.reveal img {
+	max-height: 90%;
 }
 
+.dsSlides {
+	width: 100%;
+}
 
-// // SIDEBARRED SPECIFICITY
-// // 
-// .pt_product-search-result #main .primary-content {
+.reveal * {
+	box-sizing: border-box;
+}
 
-// }
+.reveal .dsSlides {
+	text-align: left;
+
+	h3 {
+		margin: 0;
+		// font-family: regulator-nova, sans-serif;
+		// font-style: normal;
+		// font-weight: 300;
+        // text-transform: none;
+        @include fontNova();
+		line-height: 1.6;
+	}
+
+	section {
+		img {
+			background: none;
+			border: none;
+		}
+	}
+
+	.dsWho {
+		section.dsTriptych {
+			position: relative;
+			display: flex !important;
+			justify-content: center;
+			align-items: center;
+			height: 90%;
+
+			img {
+				float: left;
+				max-height: 80%;
+				margin: 0;
+				padding: 0 20px;
+			}
+
+			&.dsAbsTrip {
+				position: absolute;
+				top: 0;
+
+				.dsEmote {
+					font-size: 150px;
+				}
+			}
+		}
+	}
+
+	.dsTxtOnly {
+		display: flex !important;
+		justify-content: center;
+
+    }
+    
+    .dsTxtHeadSub {
+        display: block;
+		text-align: center;
+    }
+}
