@@ -39,6 +39,7 @@ sans-serif;
 }
 
 .reveal .dsSlides {
+    @include fontNova();
 	text-align: left;
 
 	h3 {
@@ -88,6 +89,10 @@ sans-serif;
 		display: flex !important;
 		justify-content: center;
 
+    }
+
+    .dsTxtCent {
+        text-align: center;
     }
     
     .dsTxtHeadSub {

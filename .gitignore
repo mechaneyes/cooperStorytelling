@@ -10,3 +10,5 @@ bower_components
 .DS_Store
 Thumbs.db
 *.mp4
+*.mov
+*.jpg
