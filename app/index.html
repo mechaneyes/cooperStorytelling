@@ -8,9 +8,13 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 	<!-- Place favicon.ico in the root directory -->
-	<link rel="stylesheet" href="//use.typekit.net/teb3zki.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/black.css" />
+	<!-- <link rel="stylesheet" href="//use.typekit.net/teb3zki.css"> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.min.css"> -->
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/black.css" /> -->
+
+	<link rel="stylesheet" href="styles/teb3zki.css">
+	<link rel="stylesheet" href="revealjs/css/reveal.css">
+	<link rel="stylesheet" href="revealjs/css/theme/black.css">
 
 	<!-- build:css styles/main.css -->
 	<link rel="stylesheet" href="styles/main.css">
@@ -31,7 +35,8 @@
 
 
 			<!-- ————————————————————————————————————o Title Slide -->
-			<section data-background="images/coverImage.jpg">
+			<section class="titleSlide" data-background="images/titleSlide.jpg">
+				<h2>Using Mixed Reality in Live Performance</h2>
 			</section>
 
 
@@ -128,10 +133,6 @@
 					<img src="images/kinect.jpg" />
 				</section>
 
-				<section class="dsTxtOnly">
-					<h3>Skeleton Junglist</h3>
-				</section>
-
 				<section data-background-video="images/skeletalJunglist.mp4"></section>
 
 				<section class="dsTxtOnly">
@@ -186,8 +187,8 @@
 
 
 
+			<!-- ————————————————————————————————————o Bosnia -->
 			<section>
-				<!-- ————————————————————————————————————o Bosnia -->
 				<section class="dsTxtOnly" data-background="images/mostar.jpg">
 					<h2>Bosnia!</h2>
 				</section>
@@ -277,7 +278,7 @@
 
 				<!-- Working w/ Musicians Voices -->
 				<section class="dsTxtOnly">
-					<h2>Working with the Musicians' Voices</h2>
+					<h2>Working with the Performers</h2>
 				</section>
 				<section class="dsTxtOnly">
 					<h3>Synchronizing with DJ Kuji</h3>
@@ -286,7 +287,7 @@
 				<section class="dsImageCont">
 					<img src="images/kuji.jpg" />
 					<!-- <video width="320" height="240" controls>
-						<source src="movie.mp4" type="video/mp4">
+						<source src="images/kuji321.mp4" type="video/mp4">
 						Your browser does not support the video tag.
 					</video> -->
 				</section>
@@ -348,8 +349,6 @@
 				<section class="dsTxtOnly">
 					<h2>Other Projects</h2>
 				</section>
-
-
 
 				<section class="dsTxtOnly">
 					<h3>neon.One</h3>
@@ -511,7 +510,7 @@
 
 				<!-- ————————————————————————————————————o Technology Affordability -->
 
-				<section class="dsTxtOnly">
+				<!-- <section class="dsTxtOnly">
 					<h2>Technology's <br />Affordability Progression</h2>
 				</section>
 
@@ -544,8 +543,7 @@
 					<h3>iPhone 2020</h3>
 				</section>
 				<section class="dsImageCont">
-					<!-- <img style="width: 100%; height: auto;" src="images/magicLeapOne.jpg" /> -->
-				</section>
+				</section> -->
 
 
 
@@ -645,7 +643,8 @@
 
 	</script>
 
-	<script onload="revelInit()" src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
+	<!-- <script onload="revelInit()" src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script> -->
+	<script onload="revelInit()" src="revealjs/js/reveal.js"></script>
 
 
 
