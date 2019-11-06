@@ -77,9 +77,22 @@ sans-serif;
 		}
 	}
 
+	.titleSlide {
+		position: relative;
+		h2 {
+			// position: absolute;
+			margin: 640px auto 0;
+			text-align: center;
+		}
+	}
+
 	.dsTools {
+		h2 {
+			margin-bottom: 30px;
+		}
 		h3 {
 			font-size: 40px;
+			line-height: 40px;
 		}
 		ul {
 			padding-bottom: 30px;
