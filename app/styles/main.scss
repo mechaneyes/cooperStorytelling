@@ -38,23 +38,7 @@ sans-serif;
 	box-sizing: border-box;
 }
 
-.reveal {
-	section {
-		img {
-			box-shadow: none;
-		}
-
-		&.dsWhiteBg {
-			background: white;
-		}
-	}
-	.slides>section>section {
-		
-	}
-}
-
 .reveal .dsSlides {
-    @include fontNova();
 	text-align: left;
 
 	h3 {
@@ -65,14 +49,6 @@ sans-serif;
         // text-transform: none;
         @include fontNova();
 		line-height: 1.6;
-	}
-
-	h6 {
-		font-family: regulator-nova, sans-serif;
-		font-size: 42px;
-		font-style: normal;
-		font-weight: 100;
-		text-transform: none;
 	}
 
 	section {
@@ -109,14 +85,23 @@ sans-serif;
 	}
 
 	.dsTxtOnly {
+		// display: flex !important;
+		// justify-content: center;
+		text-align: center;
+
+	}
+	
+	.dsImageCont {
 		display: flex !important;
 		justify-content: center;
-
-    }
-
-    .dsTxtCent {
-        text-align: center;
-    }
+		align-items: center;
+		img {
+			height: 90vh;
+			width: auto;
+			margin: 0 auto;
+			text-align: center;
+		}
+	}
     
     .dsTxtHeadSub {
         display: block;
